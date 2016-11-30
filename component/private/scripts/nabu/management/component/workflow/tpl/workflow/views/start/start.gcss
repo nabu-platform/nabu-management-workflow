@@ -1,0 +1,13 @@
+[route=workflowStart] {
+	.start {
+		margin: 10 auto;
+		text-align: center;
+	}
+	.created {
+		text-align: center;
+	}
+	#workflow-detail {
+		border: solid 1px #ccc;
+		border-style: solid none none none;
+	}
+}

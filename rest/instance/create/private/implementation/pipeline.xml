@@ -1,0 +1,6 @@
+<structure interface="$self:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <field name="name" type="java.lang.String"/>
+    <field minOccurs="0" name="uri" type="java.net.URI"/>
+</structure>
