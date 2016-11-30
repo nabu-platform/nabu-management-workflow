@@ -15,7 +15,7 @@
 			<li v-show="content.workflow.uri != null"><span class="key">Content: </span><a href="/api/workflow/attachment/{{ content.workflow.uri }}" class="value">{{ content.workflow.uri }}</a></li>
 			
 			<li v-for="property in content.properties"><span class="key">{{ property.key }}: </span><span class="value">{{ property.value }}</span></li>
-			<li><span class="key">Permalink: </span><span class="value"><a href="/#/workflow/{{ content.workflow.definitionId }}/instance/{{ content.workflow.id }}">Link</a></span></li>
+			<li><span class="key">Permalink: </span><span class="value"><a href="${server.root()}#/workflow/{{ content.workflow.definitionId }}/instance/{{ content.workflow.id }}">Link</a></span></li>
 		</ul>
 	</div>
 	<table cellspacing="0" cellpadding="0">
@@ -45,9 +45,9 @@
 				<td>{{ transition.code }}</td>
 				<td>{{ transition.errorCode }}</td>
 				<td>
-					<a href="javascript:void(0)" v-on:click="log = transition.errorLog" v-show="transition.errorLog"><img src="/resources/images/icons/workflow-errorlog.png"</a>
-					<a href="javascript:void(0)" v-on:click="log = transition.log" v-show="transition.log"><img src="/resources/images/icons/workflow-log.png"</a>
-					<a href="/api/workflow/attachment/{{ transition.uri }}" v-show="transition.uri"><img src="/resources/images/icons/workflow-attachment.png"</a>
+					<a href="javascript:void(0)" v-on:click="log = transition.errorLog" v-show="transition.errorLog"><img src="${server.root()}resources/images/icons/workflow-errorlog.png"</a>
+					<a href="javascript:void(0)" v-on:click="log = transition.log" v-show="transition.log"><img src="${server.root()}resources/images/icons/workflow-log.png"</a>
+					<a href="${server.root()}api/workflow/attachment/{{ transition.uri }}" v-show="transition.uri"><img src="${server.root()}resources/images/icons/workflow-attachment.png"</a>
 				</td>
 			</tr>
 		</tbody>

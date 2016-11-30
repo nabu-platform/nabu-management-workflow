@@ -15,7 +15,7 @@ application.views.WorkflowDetail = Vue.extend({
 			var self = this;
 			nabu.utils.ajax({
 				method: "get",
-				url: "/api/workflow/" + this.definitionId + "/instance/" + this.workflowId,
+				url: "${server.root()}api/workflow/" + this.definitionId + "/instance/" + this.workflowId,
 				success: function(response) {
 					self.content = JSON.parse(response.responseText);
 					if (done) {

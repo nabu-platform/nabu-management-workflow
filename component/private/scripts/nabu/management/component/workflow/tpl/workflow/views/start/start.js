@@ -13,7 +13,7 @@ application.views.WorkflowStart = Vue.extend({
 		var self = this;
 		nabu.utils.ajax({
 			method: "get",
-			url: "/api/workflow/definition",
+			url: "${server.root()}api/workflow/definition",
 			success: function(response) {
 				var definitions = JSON.parse(response.responseText);
 				nabu.utils.arrays.merge(self.definitions, definitions.workflows);
@@ -30,7 +30,7 @@ application.views.WorkflowStart = Vue.extend({
 					for (var i = 0; i < this.files.length; i++) {
 						nabu.utils.ajax({
 							method: "post",
-							url: "/api/workflow/" + self.definition + "/instance",
+							url: "${server.root()}api/workflow/" + self.definition + "/instance",
 							data: self.files[i],
 							success: function(response) {
 								var result = JSON.parse(response.responseText);
@@ -44,9 +44,12 @@ application.views.WorkflowStart = Vue.extend({
 				else {
 					nabu.utils.ajax({
 						method: "post",
-						url: "/api/workflow/" + self.definition + "/instance",
+						url: "${server.root()}api/workflow/" + self.definition + "/instance",
 						success: function(response) {
-							console.log("SUCCESS", response);
+							var result = JSON.parse(response.responseText);
+							if (result.workflowId) {
+								self.workflows.push(result.workflowId);
+							}
 						}
 					});
 				}

@@ -67,10 +67,10 @@
 					<td><a href="javascript:void(0)" v-on:click="search.correlationId = workflow.correlationId">{{ workflow.correlationId }}</a></td>
 					<td><a href="javascript:void(0)" v-on:click="search.environment = workflow.environment">{{ workflow.environment }}</a></td>
 					<td>
-						<!--<a title="View Workflow" href="/#/workflow/{{ workflow.definitionId }}/instance/{{ workflow.id }}"><img src="/resources/images/icons/workflow-view.png"/></a>-->
-						<a title="View Workflow" href="javascript:void(0)" v-on:click="$application.services.router.route('workflowDetail', { definitionId: workflow.definitionId, workflowId: workflow.id }, 'workflow-detail', true)"><img src="/resources/images/icons/workflow-view.png"/></a>
-						<a title="Download Attachment" href="/api/workflow/attachment/{{ workflow.uri }}" v-if="workflow.uri != null"><img src="/resources/images/icons/workflow-attachment.png"/></a>
-						<a title="Set to failed" href="javascript:void(0)" v-on:click="fail(workflow)" v-show="workflow.transitionState == 'ERROR'"><img src="/resources/images/icons/failed.png"/></a>
+						<!--<a title="View Workflow" href="/#/workflow/{{ workflow.definitionId }}/instance/{{ workflow.id }}"><img src="${server.root()}resources/images/icons/workflow-view.png"/></a>-->
+						<a title="View Workflow" href="javascript:void(0)" v-on:click="$application.services.router.route('workflowDetail', { definitionId: workflow.definitionId, workflowId: workflow.id }, 'workflow-detail', true)"><img src="${server.root()}resources/images/icons/workflow-view.png"/></a>
+						<a title="Download Attachment" href="${server.root()}api/workflow/attachment/{{ workflow.uri }}" v-if="workflow.uri != null"><img src="${server.root()}resources/images/icons/workflow-attachment.png"/></a>
+						<a title="Set to failed" href="javascript:void(0)" v-on:click="fail(workflow)" v-show="workflow.transitionState == 'ERROR'"><img src="${server.root()}resources/images/icons/failed.png"/></a>
 					</td>
 				</tr>
 			</tbody>

@@ -30,7 +30,7 @@ application.views.WorkflowSearch = Vue.extend({
 		var self = this;
 		nabu.utils.ajax({
 			method: "get",
-			url: "/api/workflow/definition",
+			url: "${server.root()}api/workflow/definition",
 			success: function(response) {
 				var definitions = JSON.parse(response.responseText);
 				nabu.utils.arrays.merge(self.definitions, definitions.workflows);
@@ -64,7 +64,7 @@ application.views.WorkflowSearch = Vue.extend({
 		fail: function(workflow) {
 			nabu.utils.ajax({
 				method: "put",
-				url: "/api/workflow/" + workflow.definitionId + "/instance/" + workflow.id,
+				url: "${server.root()}api/workflow/" + workflow.definitionId + "/instance/" + workflow.id,
 				data: {
 					transitionState: "FAILED"
 				},
@@ -129,7 +129,7 @@ application.views.WorkflowSearch = Vue.extend({
 				var self = this;
 				nabu.utils.ajax({
 					method: "get",
-					url: "/api/workflow/search" + query,
+					url: "${server.root()}api/workflow/search" + query,
 					success: function(response) {
 						if (!nextPage) {
 							self.workflows.splice(0, self.workflows.length);
