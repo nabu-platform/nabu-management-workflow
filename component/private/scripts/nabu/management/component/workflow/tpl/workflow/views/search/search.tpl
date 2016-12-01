@@ -80,7 +80,7 @@
 			<tfoot>
 				<tr>
 					<td colspan="14">
-						<input class="limit" type="text" v-model="search.limit"/><button v-on:click="more">Load More</button>
+						<input class="limit" type="number" v-model="search.limit"/><button v-on:click="more">Load More</button>
 					</td>
 				</tr>
 			</tfoot>

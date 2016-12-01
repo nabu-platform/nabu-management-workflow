@@ -135,7 +135,7 @@ application.views.WorkflowSearch = Vue.extend({
 							if (parsed != null && parsed.workflows != null) {
 								nabu.utils.arrays.merge(self.workflows, parsed.workflows);	
 							}
-							self.search.offset += self.search.limit;
+							self.search.offset += parseInt(self.search.limit);
 						}
 					}
 				});
