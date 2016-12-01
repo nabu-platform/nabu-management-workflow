@@ -1,7 +1,7 @@
 [route=workflowSearch] {
 	.search-menu {
 		.from, to {
-			width: 110px;
+			width: 175px;
 		}
 		text-align: center;
 		div {
@@ -11,5 +11,14 @@
 			padding: 8px 12px;
 			box-shadow: none;
 		}
+	}
+	a.external {
+		color: #a23636;
+	}
+	
+	.limit {
+		width: 100px;
+		text-align: center;
+		margin-right: 10px;
 	}
 }

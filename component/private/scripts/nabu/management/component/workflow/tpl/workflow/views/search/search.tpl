@@ -31,13 +31,15 @@
 		</div>
 		<div class="actions">
 			<button v-on:click="get(false)">Search</button>
+			<button v-on:click="clear()">Clear Filters</button>
 		</div>
 	</div>
 	<div class="search-results">
 		<table cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>
-					<td>Workflow</td>
+					<td>Id</td>
+					<td>Definition</td>
 					<td>Started</td>
 					<td>Stopped</td>
 					<td>State</td>
@@ -54,6 +56,7 @@
 			</thead>
 			<tbody>
 				<tr v-for="workflow in workflows">
+					<td><a class="external" href="${server.root()}#/workflow/{{ workflow.definitionId }}/instance/{{ workflow.id }}">{{ workflow.id }}</a></td>
 					<td><a href="javascript:void(0)" v-on:click="search.definitionId = workflow.definitionId">{{ workflow.definitionId }}</a></td>
 					<td>{{ workflow.started | formatDate }}</td>
 					<td>{{ workflow.stopped | formatDate }}</td>
@@ -68,7 +71,7 @@
 					<td><a href="javascript:void(0)" v-on:click="search.environment = workflow.environment">{{ workflow.environment }}</a></td>
 					<td>
 						<!--<a title="View Workflow" href="/#/workflow/{{ workflow.definitionId }}/instance/{{ workflow.id }}"><img src="${server.root()}resources/images/icons/workflow-view.png"/></a>-->
-						<a title="View Workflow" href="javascript:void(0)" v-on:click="$application.services.router.route('workflowDetail', { definitionId: workflow.definitionId, workflowId: workflow.id }, 'workflow-detail', true)"><img src="${server.root()}resources/images/icons/workflow-view.png"/></a>
+						<a title="View Workflow" href="javascript:void(0)" v-on:click="$application.services.router.route('workflowDetail', { definitionId: workflow.definitionId, workflowId: workflow.id, embedded: true }, 'workflow-detail', true)"><img src="${server.root()}resources/images/icons/workflow-view.png"/></a>
 						<a title="Download Attachment" href="${server.root()}api/workflow/attachment/{{ workflow.uri }}" v-if="workflow.uri != null"><img src="${server.root()}resources/images/icons/workflow-attachment.png"/></a>
 						<a title="Set to failed" href="javascript:void(0)" v-on:click="fail(workflow)" v-show="workflow.transitionState == 'ERROR'"><img src="${server.root()}resources/images/icons/failed.png"/></a>
 					</td>
@@ -76,8 +79,8 @@
 			</tbody>
 			<tfoot>
 				<tr>
-					<td colspan="13">
-						<button v-on:click="more">Load More</button>
+					<td colspan="14">
+						<input class="limit" type="text" v-model="search.limit"/><button v-on:click="more">Load More</button>
 					</td>
 				</tr>
 			</tfoot>

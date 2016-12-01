@@ -1,21 +1,20 @@
 <template id="workflowDetail">
 	<div class="details">
 		<ul>
-			<li><span class="key">Definition Id: </span><span class="value">{{ content.workflow.definitionId }}</span></li>
-			<li><span class="key">Workflow Id: </span><span class="value">{{ content.workflow.id }}</span></li>
-			<li><span class="key">State: </span><span v-bind:class="{ 'bad': content.workflow.transitionState == 'ERROR', 'good': content.workflow.transitionState == 'SUCCEEDED' }" class="value">{{ content.workflow.transitionState }}</span></li>
-			<li><span class="key">Started: </span><span class="value">{{ content.workflow.started | formatDate }}</span></li>
-			<li><span class="key">Stopped: </span><span class="value">{{ content.workflow.stopped | formatDate }}</span></li>
-			<li v-show="content.workflow.parentId != null"><span class="key">Parent Id: </span><span class="value">{{ content.workflow.parentId }}</span></li>
-			<li v-show="content.workflow.batchId != null"><span class="key">Batch Id: </span><span class="value">{{ content.workflow.batchId }}</span></li>
-			<li v-show="content.workflow.contextId != null"><span class="key">Context Id: </span><span class="value">{{ content.workflow.contextId }}</span></li>
-			<li v-show="content.workflow.groupId != null"><span class="key">Group Id: </span><span class="value">{{ content.workflow.groupId }}</span></li>
-			<li v-show="content.workflow.correlationId != null"><span class="key">Correlation Id: </span><span class="value">{{ content.workflow.correlationId }}</span></li>
-			<li v-show="content.workflow.workflowType != null"><span class="key">Workflow Type: </span><span class="value">{{ content.workflow.workflowType }}</span></li>
-			<li v-show="content.workflow.uri != null"><span class="key">Content: </span><a href="/api/workflow/attachment/{{ content.workflow.uri }}" class="value">{{ content.workflow.uri }}</a></li>
+			<li v-if="!embedded"><span class="key">Definition Id: </span><span class="value">{{ content.workflow.definitionId }}</span></li>
+			<li v-if="!embedded"><span class="key">Workflow Id: </span><span class="value"><a href="${server.root()}#/workflow/{{ content.workflow.definitionId }}/instance/{{ content.workflow.id }}">{{ content.workflow.id }}</a></span></li>
+			<li v-if="!embedded"><span class="key">State: </span><span v-bind:class="{ 'bad': content.workflow.transitionState == 'ERROR', 'good': content.workflow.transitionState == 'SUCCEEDED' }" class="value">{{ content.workflow.transitionState }}</span></li>
+			<li v-if="!embedded"><span class="key">Started: </span><span class="value">{{ content.workflow.started | formatDate }}</span></li>
+			<li v-if="!embedded"><span class="key">Stopped: </span><span class="value">{{ content.workflow.stopped | formatDate }}</span></li>
+			<li v-if="!embedded" v-show="content.workflow.parentId != null"><span class="key">Parent Id: </span><span class="value">{{ content.workflow.parentId }}</span></li>
+			<li v-if="!embedded" v-show="content.workflow.batchId != null"><span class="key">Batch Id: </span><span class="value">{{ content.workflow.batchId }}</span></li>
+			<li v-if="!embedded" v-show="content.workflow.contextId != null"><span class="key">Context Id: </span><span class="value">{{ content.workflow.contextId }}</span></li>
+			<li v-if="!embedded" v-show="content.workflow.groupId != null"><span class="key">Group Id: </span><span class="value">{{ content.workflow.groupId }}</span></li>
+			<li v-if="!embedded" v-show="content.workflow.correlationId != null"><span class="key">Correlation Id: </span><span class="value">{{ content.workflow.correlationId }}</span></li>
+			<li v-if="!embedded" v-show="content.workflow.workflowType != null"><span class="key">Workflow Type: </span><span class="value">{{ content.workflow.workflowType }}</span></li>
+			<li v-if="!embedded" v-show="content.workflow.uri != null"><span class="key">Content: </span><a href="${server.root()}api/workflow/attachment/{{ content.workflow.uri }}" class="value">{{ content.workflow.uri }}</a></li>
 			
 			<li v-for="property in content.properties"><span class="key">{{ property.key }}: </span><span class="value">{{ property.value }}</span></li>
-			<li><span class="key">Permalink: </span><span class="value"><a href="${server.root()}#/workflow/{{ content.workflow.definitionId }}/instance/{{ content.workflow.id }}">Link</a></span></li>
 		</ul>
 	</div>
 	<table cellspacing="0" cellpadding="0">

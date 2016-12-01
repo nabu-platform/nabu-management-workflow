@@ -50,7 +50,7 @@ application.views.WorkflowSearch = Vue.extend({
 			this.search.correlationId = null;
 			this.search.groupId = null;
 			this.search.workflowType = null;
-			this.search.limit = 10;
+			// this.search.limit = 10;
 			this.search.offset = 0;
 			this.search.batchId = null;
 			this.search.environment = null;
@@ -78,12 +78,8 @@ application.views.WorkflowSearch = Vue.extend({
 		},
 		get: function(nextPage) {
 			console.log("requesting!!");
-			if (nextPage) {
-				this.search.offset += 10;
-			}
-			else {
+			if (!nextPage) {
 				this.search.offset = 0;
-				this.search.limit = 10;
 			}
 			if (this.search.connectionId || this.search.definitionId) {
 				var query = "?offset=" + this.search.offset + "&limit=" + this.search.limit;
@@ -139,6 +135,7 @@ application.views.WorkflowSearch = Vue.extend({
 							if (parsed != null && parsed.workflows != null) {
 								nabu.utils.arrays.merge(self.workflows, parsed.workflows);	
 							}
+							self.search.offset += self.search.limit;
 						}
 					}
 				});
@@ -179,10 +176,10 @@ application.views.WorkflowSearch = Vue.extend({
 	filters: {
 		date: {
 			read: function(value) {
-				return value ? value.toLocaleDateString() : null;
+				return value ? value.toISOString().replace(/\..*/, "") : null; // .replace(/T.*/, "")
 			},
 			write: function(value, oldValue) {
-				return value ? new Date(value) : null;
+				return value ? new Date(value + "Z") : null;
 			}
 		},
 		formatDate: function(value) {

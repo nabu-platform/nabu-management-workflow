@@ -1,5 +1,5 @@
 application.views.WorkflowDetail = Vue.extend({
-	props: ["definitionId", "workflowId"],
+	props: ["definitionId", "workflowId", "embedded"],
 	template: "#workflowDetail",
 	data: function() {
 		return {

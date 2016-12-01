@@ -2,7 +2,7 @@
 <restInterface>
     <method>POST</method>
     <path>/{definitionId}/instance</path>
-    <queryParameters>transitionId, parentId, batchId, correlationId, contextId, groupId, workflowType</queryParameters>
+    <queryParameters>transitionId, parentId, batchId, correlationId, contextId, groupId, workflowType, asynchronous</queryParameters>
     <headerParameters>Content-Type, Content-Disposition</headerParameters>
     <inputAsStream>true</inputAsStream>
     <output>nabu.management.workflow.types.instance.createOutput</output>
