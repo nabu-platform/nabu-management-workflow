@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>PUT</method>
-    <path>/{definitionId}/instance/{workflowId}</path>
-    <queryParameters>transition</queryParameters>
+    <path>/{definitionId}/instance/{workflowId}/{transition}</path>
+    <queryParameters>asynchronous</queryParameters>
 </restInterface>
