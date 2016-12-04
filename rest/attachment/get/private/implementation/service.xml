@@ -1,16 +1,18 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="3c8b4990-bbce-4ce7-ad9e-0bb34377a288">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="bb25df0e-ac4d-482e-bbe9-857244f50c89">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="effa5692-0cbf-41ce-a123-e46e17907187" serviceId="nabu.frameworks.datastore.Services.retrieve" resultName="result2c74caeb2b484486b50176f9dd5620f9" invocationOrder="0" temporaryMapping="true" y="94" x="73">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="effa5692-0cbf-41ce-a123-e46e17907187" invocationOrder="0" temporaryMapping="true" serviceId="nabu.frameworks.datastore.Services.retrieve" resultName="result2c74caeb2b484486b50176f9dd5620f9" y="94" x="73">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="37cc3faa-068c-4096-97b0-7ecd3c5e67b3" fixedValue="false" optional="false" mask="false">
 				<from>input/path/uri</from>
 				<to>uri</to>
 			</steps>
+			<asynchronous>false</asynchronous>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="e2f315a9-771d-4a39-b9ba-fc5da28c4519" serviceId="nabu.frameworks.datastore.Services.properties" resultName="result95d4046f2f0c45e6ad330b5e43bbf932" invocationOrder="0" temporaryMapping="true" y="177" x="40">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="e2f315a9-771d-4a39-b9ba-fc5da28c4519" invocationOrder="0" temporaryMapping="true" serviceId="nabu.frameworks.datastore.Services.properties" resultName="result95d4046f2f0c45e6ad330b5e43bbf932" y="177" x="40">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d23b41fd-2b3e-4ada-a96d-0bd082f0cb14" fixedValue="false" optional="false" mask="false">
 				<from>input/path/uri</from>
 				<to>uri</to>
 			</steps>
+			<asynchronous>false</asynchronous>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="e5033dd2-0a33-43f1-8355-18cdbb35afc0" fixedValue="false" optional="false" mask="false">
 			<from>result2c74caeb2b484486b50176f9dd5620f9/stream</from>

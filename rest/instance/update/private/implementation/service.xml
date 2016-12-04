@@ -17,8 +17,10 @@
 				<from>input/content/transitionState</from>
 				<to>parameters[0]/transitionState</to>
 			</steps>
+			<asynchronous>false</asynchronous>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="955a2917-c9bc-480a-af27-bd2a2f05813f" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.Services.getDefinitions" resultName="result87c6894c65b24b6789c994f10267272a" y="30" x="13">
+			<asynchronous>false</asynchronous>
 		</steps>
 	</steps>
 </sequence>

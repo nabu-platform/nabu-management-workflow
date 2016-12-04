@@ -9,6 +9,7 @@
 				<from>input/path/workflowId</from>
 				<to>workflowId</to>
 			</steps>
+			<asynchronous>false</asynchronous>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="f478b0a6-7bb4-4854-be5b-92d30c43dc50" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.Services.getProperties" resultName="result046f101721c246d48bb2d47aff22d337" y="150" x="80">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="1f58a13d-21d4-477f-a8ea-99d454b23995" fixedValue="false" optional="false" mask="false">
@@ -19,6 +20,7 @@
 				<from>input/path/workflowId</from>
 				<to>workflowId</to>
 			</steps>
+			<asynchronous>false</asynchronous>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="fe90dd6f-f355-4082-97bc-bd7f9c0f8ed2" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.Services.getWorkflow" resultName="resultc82cc987b13b439e8e11e90764b22585" y="310" x="80">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="f7306f6c-ec26-47ab-b635-a4adc0ff4750" fixedValue="false" optional="false" mask="false">
@@ -29,6 +31,7 @@
 				<from>input/path/workflowId</from>
 				<to>workflowId</to>
 			</steps>
+			<asynchronous>false</asynchronous>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="a850c51a-6ad5-484a-8a9d-76c48daf0ef8" fixedValue="false" optional="false" mask="false">
 			<from>resulta0cb8675a94e4dc9a2f36c35ae137528/transitions</from>
@@ -43,6 +46,7 @@
 			<to>output/content/workflow</to>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="66a2a3f1-c688-4caa-96d1-2432515d86bf" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.Services.getDefinitions" resultName="result314bbf94d1624360baa3b55f7a9bdc8b" y="432" x="80">
+			<asynchronous>false</asynchronous>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d0b97758-00db-4021-9330-727ca24fac53" fixedValue="false" optional="false" mask="false">
 			<from>result314bbf94d1624360baa3b55f7a9bdc8b/definitions[definitionId = /input/path/definitionId]</from>

@@ -21,3 +21,10 @@ application.services.router.register({
 	},
 	url: "/workflow/start"
 });
+
+application.services.router.register({
+	alias: "workflowDashboard",
+	enter: function(parameters) {
+		return new application.views.WorkflowDashboard({ data: parameters });
+	}
+});

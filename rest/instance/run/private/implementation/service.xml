@@ -29,6 +29,7 @@
 				<from>input/path/transition</from>
 				<to>transitionId</to>
 			</steps>
+			<asynchronous>false</asynchronous>
 		</steps>
 	</steps>
 </sequence>

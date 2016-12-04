@@ -8,4 +8,5 @@
     <webFragments>nabu.management.workflow.rest.instance.update</webFragments>
     <webFragments>nabu.management.workflow.rest.instance.create</webFragments>
     <webFragments>nabu.management.workflow.rest.instance.run</webFragments>
+    <webFragments>nabu.management.workflow.rest.instance.dashboard</webFragments>
 </webModule>

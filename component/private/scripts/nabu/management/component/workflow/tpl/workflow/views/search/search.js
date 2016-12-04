@@ -45,6 +45,36 @@ application.views.WorkflowSearch = Vue.extend({
 		})	
 	},
 	methods: {
+		increment: function(amount, event) {
+			event.target.value = this.changeDate(new Date(event.target.value + "Z"), event.target.selectionStart, amount).toISOString().replace(/\..*/, "");
+		},
+		changeDate: function(oldDate, cursorPosition, increment) {
+			// year
+			if (cursorPosition <= 4) {
+				oldDate.setYear(oldDate.getYear() + increment);
+			}
+			// month
+			else if (cursorPosition >= 5 && cursorPosition <= 7) {
+				oldDate.setMonth(oldDate.getMonth() + increment);
+			}
+			// day
+			else if (cursorPosition >= 8 && cursorPosition <= 10) {
+				oldDate.setDate(oldDate.getDate() + increment);
+			}
+			// hour
+			else if (cursorPosition >= 11 && cursorPosition <= 13) {
+				oldDate.setHours(oldDate.getHours() + increment);
+			}
+			// minute
+			else if (cursorPosition >= 14 && cursorPosition <= 16) {
+				oldDate.setMinutes(oldDate.getMinutes() + increment);
+			}
+			// second
+			else if (cursorPosition >= 17 && cursorPosition <= 19) {
+				oldDate.setSeconds(oldDate.getSeconds() + increment);
+			}
+			return oldDate;
+		},
 		clear: function() {
 			this.search.contextId = null;
 			this.search.correlationId = null;
@@ -119,6 +149,9 @@ application.views.WorkflowSearch = Vue.extend({
 				if (this.search.workflowId) {
 					query += "&workflowId=" + this.search.workflowId.trim();
 				}
+				if (this.search.environment) {
+					query += "&environment=" + this.search.environment.trim();
+				}
 				for (var i = 0; i < this.search.parameters.length; i++) {
 					query += "&property=" + this.search.parameters[i].key + "=" + this.search.parameters[i].value;
 				}
@@ -176,10 +209,13 @@ application.views.WorkflowSearch = Vue.extend({
 	filters: {
 		date: {
 			read: function(value) {
+				if (typeof(value) == "string") {
+					return value;
+				}
 				return value ? value.toISOString().replace(/\..*/, "") : null; // .replace(/T.*/, "")
 			},
 			write: function(value, oldValue) {
-				return value ? new Date(value + "Z") : null;
+				return value ? new Date(value + ".000Z") : oldValue;
 			}
 		},
 		formatDate: function(value) {

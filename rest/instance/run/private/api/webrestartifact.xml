@@ -3,4 +3,6 @@
     <method>PUT</method>
     <path>/{definitionId}/instance/{workflowId}/{transition}</path>
     <queryParameters>asynchronous</queryParameters>
+    <role>$user</role>
+    <permissionAction>="workflow.instance.run." + input/path/definitionId + "." + input/path/transition</permissionAction>
 </restInterface>

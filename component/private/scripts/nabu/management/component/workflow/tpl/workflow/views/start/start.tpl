@@ -1,4 +1,5 @@
 <template id="workflowStart">
+	<h1>Start Workflow</h1>
 	<div class="start">
 		<select v-model="definition">
 			<option v-bind:value="null">-- CHOOSE --</option>

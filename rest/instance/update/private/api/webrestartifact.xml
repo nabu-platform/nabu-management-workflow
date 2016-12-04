@@ -2,5 +2,7 @@
 <restInterface>
     <method>PUT</method>
     <path>/{definitionId}/instance/{workflowId}</path>
+    <role>$user</role>
+    <permissionAction>="workflow.instance.update." + input/path/definitionId</permissionAction>
     <input>nabu.management.workflow.types.instance.updateInput</input>
 </restInterface>

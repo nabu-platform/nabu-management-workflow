@@ -1,4 +1,5 @@
 <template id="workflowDetail">
+	<h1>Workflow Detail</h1>
 	<div class="details">
 		<ul>
 			<li v-if="!embedded"><span class="key">Definition Id: </span><span class="value">{{ content.workflow.definitionId }}</span></li>

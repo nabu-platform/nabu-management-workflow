@@ -10,6 +10,7 @@
 					<from>="="</from>
 					<to>separator</to>
 				</steps>
+				<asynchronous>false</asynchronous>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b51f5416-94b3-4b4f-a81f-2189da743a8e" fixedValue="false" optional="false" mask="false">
 				<from>result13ead88634234613971a69af165d6f98/parts[0]</from>
@@ -30,6 +31,7 @@
 					<from>pair</from>
 					<to>object</to>
 				</steps>
+				<asynchronous>false</asynchronous>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="58a8f3c9-05e8-4387-85ab-1bc5ccadf145" fixedValue="false" optional="false" mask="false">
 				<from>resultc51db1478a014acfa6a920ff2ee04265/list</from>
@@ -53,6 +55,7 @@
 							<from>input/query/workflowId[0]</from>
 							<to>workflowId</to>
 						</steps>
+						<asynchronous>false</asynchronous>
 					</steps>
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d657519d-7ae6-402c-8f55-f338e82fa358" fixedValue="false" optional="false" mask="false">
 						<from>result5e1017fe3c4d4c81bc392c4f2a8801be/workflow</from>
@@ -125,6 +128,7 @@
 							<from>input/query/environment[0]</from>
 							<to>environment</to>
 						</steps>
+						<asynchronous>false</asynchronous>
 					</steps>
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="8e87eeaa-7961-4142-8e61-c07691dcb5a2" fixedValue="false" optional="false" mask="false">
 						<from>result600d73b7825f4c39af4ac707b73a51fb/workflows</from>
@@ -144,6 +148,7 @@
 						<from>input/query/workflowId[0]</from>
 						<to>workflowId</to>
 					</steps>
+					<asynchronous>false</asynchronous>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="5bc40f49-7865-4b4e-b34d-44939860c7f4" fixedValue="false" optional="false" mask="false">
 					<from>result1b1eb86ec9ba470c930815331897afc4/workflow</from>
@@ -212,6 +217,7 @@
 						<from>input/query/definitionId[0]</from>
 						<to>definitionId</to>
 					</steps>
+					<asynchronous>false</asynchronous>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="74b280bf-adaf-454f-881f-f6c29d838b24" fixedValue="false" optional="false" mask="false">
 					<from>resultbabcb0a5daf646c88298ccf1151ca438/workflows</from>

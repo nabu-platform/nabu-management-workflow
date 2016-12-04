@@ -1,4 +1,5 @@
 <template id="workflowSearch">
+	<h1>Search Workflows</h1>
 	<div class="search-menu">
 		<div class="primary">
 			<select v-model="search.connectionId" class="connectionId">
@@ -16,8 +17,8 @@
 				<option v-bind:value="null">-- ALL --</option>
 				<option v-for="transitionState in transitionStates" v-bind:value="transitionState">{{ transitionState }}</option>
 			</select>
-			<input type="text" v-model="search.from | date" placeholder="From" class="from"/>
-			<input type="text" v-model="search.to | date" placeholder="Until" class="to"/>
+			<input type="text" v-model="search.from | date" placeholder="From" class="from" @keydown.down="increment(-1, $event)" @keydown.up="increment(1, $event)"/>
+			<input type="text" v-model="search.until | date" placeholder="Until" class="to" @keydown.down="increment(-1, $event)" @keydown.up="increment(1, $event)"/>
 			<input type="text" v-model="search.workflowType" placeholder="Workflow Type" class="id workflowType"/>
 			<input type="text" v-model="search.workflowId" placeholder="Workflow Id" class="id workflowId"/>
 		</div>

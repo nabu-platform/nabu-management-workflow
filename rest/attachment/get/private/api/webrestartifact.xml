@@ -3,5 +3,7 @@
     <method>GET</method>
     <path>/attachment/{uri : .*}</path>
     <responseHeaders>Content-Type, Content-Length, Content-Disposition</responseHeaders>
+    <role>$user</role>
+    <permissionAction>workflow.attachment.get</permissionAction>
     <outputAsStream>true</outputAsStream>
 </restInterface>

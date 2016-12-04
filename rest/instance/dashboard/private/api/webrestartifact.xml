@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restInterface>
+    <method>GET</method>
+    <path>/dashboard</path>
+    <queryParameters>connectionId</queryParameters>
+    <role>$user</role>
+    <permissionAction>workflow.instance.dashboard</permissionAction>
+    <output>nabu.management.workflow.types.instance.dashboardOutput</output>
+</restInterface>

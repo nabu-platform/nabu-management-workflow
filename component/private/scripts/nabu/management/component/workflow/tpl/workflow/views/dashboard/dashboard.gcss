@@ -1,0 +1,67 @@
+[route=workflowDashboard] {
+	
+	vertical-align: top;
+	
+	.workflow-dashboard-chart {
+		height: 350px;
+		padding: 20px;
+	}
+	
+	.ct-label {
+		font-weight: bold;
+	}
+	
+	.ct-series-a .ct-slice-pie {
+		fill: ${levels/critical/dark};
+		stroke: ${levels/critical/light};
+		stroke-width: 3px;
+	}
+	
+	.ct-series-b .ct-slice-pie {
+		fill: ${levels/trace/dark};
+		stroke: ${levels/trace/light};
+		stroke-width: 3px;
+	}
+	
+	.ct-series-c .ct-slice-pie {
+		fill: ${levels/info/dark};
+		stroke: ${levels/info/light};
+		stroke-width: 3px;
+	}
+	
+	.ct-series-d .ct-slice-pie {
+		fill: ${levels/warning/dark};
+		stroke: ${levels/warning/light};
+		stroke-width: 3px;
+	}
+	
+	ul {
+		text-align: left;
+	}
+	li {
+		list-style-type: none;
+		.value {
+			font-weight: bold;
+		}
+	}
+	
+	.legend {
+		display: inline-block;
+		margin-right: 10px;
+		height: 1em;
+		width: 10px;
+		
+		&.errors {
+			background-color: ${levels/critical/dark};
+		}
+		&.failed {
+			background-color: ${levels/trace/dark};
+		}
+		&.success {
+			background-color: ${levels/info/dark};
+		}
+		&.running {
+			background-color: ${levels/warning/dark};
+		}
+	}
+}

@@ -2,5 +2,7 @@
 <restInterface>
     <method>GET</method>
     <path>/definition</path>
+    <role>$user</role>
+    <permissionAction>workflow.definition.list</permissionAction>
     <output>nabu.management.workflow.types.definition.workflowList</output>
 </restInterface>
