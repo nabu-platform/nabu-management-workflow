@@ -6,4 +6,5 @@
     <role>$user</role>
     <permissionAction>workflow.instance.dashboard</permissionAction>
     <output>nabu.management.workflow.types.instance.dashboardOutput</output>
+    <configurationType>nabu.management.workflow.configuration</configurationType>
 </restInterface>

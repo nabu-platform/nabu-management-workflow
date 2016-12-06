@@ -3,8 +3,8 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="4646f2f9-8af5-4171-95d2-ba8ca14d8775" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.Services.getDefinitions" resultName="result79c67f61ece04deebe4dd8b14daffff7" y="144" x="80">
 			<asynchronous>false</asynchronous>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="6f1ed5cd-89bd-4420-8d9d-2e777d8d695e" fixedValue="false" optional="false" mask="false">
-			<from>result79c67f61ece04deebe4dd8b14daffff7/definitions</from>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="3e2069ca-e12b-4fdb-bee2-2be3005d410b" optional="false" mask="false" fixedValue="false">
+			<from>result79c67f61ece04deebe4dd8b14daffff7/definitions[/input/configuration/workflowFilter == null || definitionId ~/input/configuration/workflowFilter]</from>
 			<to>output/content/workflows</to>
 		</steps>
 	</steps>

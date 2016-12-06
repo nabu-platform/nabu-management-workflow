@@ -1,13 +1,16 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="18e735f0-d1d0-4454-a6ab-a7c1349f5112">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch" disabled="false" id="ccfd24cf-0fd9-42bc-859b-6154c2cf61fb">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Throw" disabled="false" label="input/configuration/workflowFilter != null &amp;&amp; input/query/connectionId[0] !~ input/configuration/workflowFilter" id="fa6ea86e-abc4-4ab7-8c2a-64a3b2769ef4" message="Invalid connection" xsi:nil="true"/>
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="6a468b20-b0ff-40be-ba6c-a543be66c71f">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="7d8b08f5-5220-46d1-a6e2-3b079611e8ba" serviceId="nabu.misc.workflow.providers.basic.database.workflow.selectGroupedByStatus" resultName="result23702c42aa9547ecac341c4ff7a21e85" temporaryMapping="true" invocationOrder="0" y="101" x="86">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c7899970-da90-4088-8aa3-5ea77136b106" fixedValue="false" optional="false" mask="false">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="7d8b08f5-5220-46d1-a6e2-3b079611e8ba" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.providers.basic.database.workflow.selectGroupedByStatus" resultName="result23702c42aa9547ecac341c4ff7a21e85" y="101" x="86">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c7899970-da90-4088-8aa3-5ea77136b106" optional="false" mask="false" fixedValue="false">
 				<from>input/query/connectionId[0]</from>
 				<to>connection</to>
 			</steps>
 			<asynchronous>false</asynchronous>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7e4d2516-35a9-4c2b-9be3-7709b0c8cc46" fixedValue="false" optional="false" mask="false">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7e4d2516-35a9-4c2b-9be3-7709b0c8cc46" optional="false" mask="false" fixedValue="false">
 			<from>result23702c42aa9547ecac341c4ff7a21e85/results</from>
 			<to>output/content/entries</to>
 		</steps>

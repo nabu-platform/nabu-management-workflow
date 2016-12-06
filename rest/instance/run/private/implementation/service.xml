@@ -1,31 +1,44 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="01771992-e9f7-4b47-81be-ac54bdb63e74">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="af7c8547-b5d3-430f-b5d0-371af1e2707b">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="b0638657-4065-473c-a200-d20befd47d73" invocationOrder="0" temporaryMapping="true" serviceId="nabu.management.workflow.services.getWorkflow" resultName="result22a87229f665484baca67aad7b887655" y="54" x="33">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="7d447329-af9d-4f82-b47c-4de85225497d" optional="false" mask="false" fixedValue="false">
+				<from>input/path/definitionId</from>
+				<to>name</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="0a3b6ee9-94ae-4fce-99a2-f093ccdfadea" optional="false" mask="false" fixedValue="false">
+				<from>input/configuration/workflowFilter</from>
+				<to>filter</to>
+			</steps>
+			<asynchronous>false</asynchronous>
+		</steps>
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Map asynchronous" id="b50e8e4a-5166-4476-993a-6a86f7ed70bb">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="95326c54-5eec-4d58-be27-d5bf70799891" fixedValue="false" optional="false" mask="false">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="95326c54-5eec-4d58-be27-d5bf70799891" optional="false" mask="false" fixedValue="false">
 			<from>input/query/asynchronous[0]</from>
 			<to>asynchronous</to>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Set default" id="c6250870-4eb3-4582-bb88-f9d0dc7392f6">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="0618470a-46f7-438f-912a-650bb46f00ba" fixedValue="true" optional="true" mask="false">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="0618470a-46f7-438f-912a-650bb46f00ba" optional="true" mask="false" fixedValue="true">
 			<from>true</from>
 			<to>asynchronous</to>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="7a53c322-67a3-4e92-8e05-69639be954c8">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="8ffa3c26-3216-45d2-af51-6ec0adbc5b3e" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.Services.run" resultName="result6ba04fb84cb44d7ab172418323475d87" y="118" x="74">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="9881bbac-93c8-4081-82ff-6fd78391b8a2" fixedValue="false" optional="false" mask="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="9881bbac-93c8-4081-82ff-6fd78391b8a2" optional="false" mask="false" fixedValue="false">
 				<from>input/path/definitionId</from>
 				<to>definitionId</to>
 			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="31cafd0b-ab3a-424c-a07d-c4cf2a1f83b9" fixedValue="false" optional="false" mask="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="31cafd0b-ab3a-424c-a07d-c4cf2a1f83b9" optional="false" mask="false" fixedValue="false">
 				<from>input/path/workflowId</from>
 				<to>workflowId</to>
 			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c2e64302-7bf8-45dd-aaf2-0be2f3b8f672" fixedValue="false" optional="false" mask="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c2e64302-7bf8-45dd-aaf2-0be2f3b8f672" optional="false" mask="false" fixedValue="false">
 				<from>asynchronous</from>
 				<to>asynchronous</to>
 			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="4e80783f-ade9-4d0b-97af-d7c30eb850b0" fixedValue="false" optional="false" mask="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="4e80783f-ade9-4d0b-97af-d7c30eb850b0" optional="false" mask="false" fixedValue="false">
 				<from>input/path/transition</from>
 				<to>transitionId</to>
 			</steps>

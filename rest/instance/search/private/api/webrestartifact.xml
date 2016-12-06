@@ -6,4 +6,5 @@
     <role>$user</role>
     <permissionAction>workflow.instance.search</permissionAction>
     <output>nabu.management.workflow.types.instance.workflowList</output>
+    <configurationType>nabu.management.workflow.configuration</configurationType>
 </restInterface>

@@ -8,4 +8,5 @@
     <permissionAction>="workflow.instance.create." + input/path/definitionId</permissionAction>
     <inputAsStream>true</inputAsStream>
     <output>nabu.management.workflow.types.instance.createOutput</output>
+    <configurationType>nabu.management.workflow.configuration</configurationType>
 </restInterface>

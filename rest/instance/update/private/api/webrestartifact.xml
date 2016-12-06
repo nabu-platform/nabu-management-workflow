@@ -5,4 +5,5 @@
     <role>$user</role>
     <permissionAction>="workflow.instance.update." + input/path/definitionId</permissionAction>
     <input>nabu.management.workflow.types.instance.updateInput</input>
+    <configurationType>nabu.management.workflow.configuration</configurationType>
 </restInterface>

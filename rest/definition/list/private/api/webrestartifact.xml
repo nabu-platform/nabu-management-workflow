@@ -5,4 +5,5 @@
     <role>$user</role>
     <permissionAction>workflow.definition.list</permissionAction>
     <output>nabu.management.workflow.types.definition.workflowList</output>
+    <configurationType>nabu.management.workflow.configuration</configurationType>
 </restInterface>

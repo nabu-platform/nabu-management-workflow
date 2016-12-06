@@ -1,0 +1,14 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="89bac8e2-9bd1-40f3-9dbc-9117c047dc6a">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch" disabled="false" id="ba84093d-4c82-41ad-bc3f-b7d71b827f48">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Throw" disabled="false" label="input/filter != null &amp;&amp; input/name !~ input/filter" id="3d6a7750-c637-406e-a48a-8260bd7265d8" message="Invalid workflow" xsi:nil="true"/>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="bd28fe5b-fca5-4f17-ae3e-53e20ef0a4d0">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="4646f2f9-8af5-4171-95d2-ba8ca14d8775" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.Services.getDefinitions" resultName="result79c67f61ece04deebe4dd8b14daffff7" y="144" x="80">
+			<asynchronous>false</asynchronous>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="35018efd-5d09-4c44-8126-0524eb246d9c" optional="false" mask="false" fixedValue="false">
+			<from>result79c67f61ece04deebe4dd8b14daffff7/definitions[definitionId = /input/name]</from>
+			<to>output/workflow</to>
+		</steps>
+	</steps>
+</sequence>

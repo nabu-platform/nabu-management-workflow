@@ -5,4 +5,5 @@
     <queryParameters>asynchronous</queryParameters>
     <role>$user</role>
     <permissionAction>="workflow.instance.run." + input/path/definitionId + "." + input/path/transition</permissionAction>
+    <configurationType>nabu.management.workflow.configuration</configurationType>
 </restInterface>

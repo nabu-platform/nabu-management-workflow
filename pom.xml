@@ -43,5 +43,9 @@
 			<groupId>nabu.data</groupId>
 			<artifactId>mime</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>nabu.misc</groupId>
+			<artifactId>workflow</artifactId>
+		</dependency>
 	</dependencies>
 </project>

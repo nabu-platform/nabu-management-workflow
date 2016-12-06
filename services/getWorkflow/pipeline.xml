@@ -1,0 +1,9 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="name" type="java.lang.String"/>
+        <field minOccurs="0" name="filter" type="java.lang.String"/>
+    </structure>
+    <structure name="output">
+        <structure definition="nabu.misc.workflow.types.WorkflowDefinition" minOccurs="0" name="workflow"/>
+    </structure>
+</structure>

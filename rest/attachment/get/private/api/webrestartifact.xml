@@ -6,4 +6,5 @@
     <role>$user</role>
     <permissionAction>workflow.attachment.get</permissionAction>
     <outputAsStream>true</outputAsStream>
+    <configurationType>nabu.management.workflow.configuration</configurationType>
 </restInterface>

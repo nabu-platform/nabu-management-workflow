@@ -5,4 +5,5 @@
     <role>$user</role>
     <permissionAction>="workflow.instance.get." + input/path/definitionId</permissionAction>
     <output>nabu.management.workflow.types.instance.workflowDetail</output>
+    <configurationType>nabu.management.workflow.configuration</configurationType>
 </restInterface>
