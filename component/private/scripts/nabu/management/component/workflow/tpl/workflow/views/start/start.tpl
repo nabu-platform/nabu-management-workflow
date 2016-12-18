@@ -7,7 +7,7 @@
 		</select>
 		<select v-model="transition" :disabled="definition == null">
 			<option v-bind:value="null">-- CHOOSE --</option>
-			<option v-for="transition in transitions" v-bind:value="transition.definitionId">{{ transition.name }}</option>
+			<option v-for="transition in transitions" v-bind:value="transition.id">{{ transition.name }}</option>
 		</select>
 		<input type="file" multiple="multiple" :disabled="definition == null" v-on:change="selectFiles"/>
 		<button v-on:click="start()">Start</button>

@@ -30,7 +30,7 @@ application.views.WorkflowStart = Vue.extend({
 					for (var i = 0; i < this.files.length; i++) {
 						nabu.utils.ajax({
 							method: "post",
-							url: "${server.root()}api/workflow/" + self.definition + "/instance",
+							url: "${server.root()}api/workflow/" + self.definition + "/instance" + (self.transition ? "?transitionId=" + self.transition : ""),
 							data: self.files[i],
 							success: function(response) {
 								var result = JSON.parse(response.responseText);
@@ -44,7 +44,7 @@ application.views.WorkflowStart = Vue.extend({
 				else {
 					nabu.utils.ajax({
 						method: "post",
-						url: "${server.root()}api/workflow/" + self.definition + "/instance",
+						url: "${server.root()}api/workflow/" + self.definition + "/instance" + (self.transition ? "?transitionId=" + self.transition : ""),
 						success: function(response) {
 							var result = JSON.parse(response.responseText);
 							if (result.workflowId) {
