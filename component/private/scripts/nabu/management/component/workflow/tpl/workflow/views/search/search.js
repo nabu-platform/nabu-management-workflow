@@ -215,7 +215,14 @@ application.views.WorkflowSearch = Vue.extend({
 				return value ? value.toISOString().replace(/\..*/, "") : null; // .replace(/T.*/, "")
 			},
 			write: function(value, oldValue) {
-				return value ? new Date(value + ".000Z") : oldValue;
+				if (!value) {
+					return null;
+				}
+				var date = value ? new Date(value + ".000Z") : new Date(oldValue);
+				if (isNaN(date.getTime())) {
+					date = new Date(oldValue);
+				}
+				return date;
 			}
 		},
 		formatDate: function(value) {
