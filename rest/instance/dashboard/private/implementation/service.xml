@@ -3,7 +3,7 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Throw" disabled="false" label="input/configuration/workflowFilter != null &amp;&amp; input/query/connectionId[0] !~ input/configuration/workflowFilter" id="fa6ea86e-abc4-4ab7-8c2a-64a3b2769ef4" message="Invalid connection" xsi:nil="true"/>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="6a468b20-b0ff-40be-ba6c-a543be66c71f">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="7d8b08f5-5220-46d1-a6e2-3b079611e8ba" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.providers.basic.database.workflow.selectGroupedByStatus" resultName="result23702c42aa9547ecac341c4ff7a21e85" y="101" x="86">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="7d8b08f5-5220-46d1-a6e2-3b079611e8ba" serviceId="nabu.misc.workflow.providers.basic.database.workflow.selectGroupedByStatus" resultName="result23702c42aa9547ecac341c4ff7a21e85" invocationOrder="0" temporaryMapping="true" y="101" x="86">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c7899970-da90-4088-8aa3-5ea77136b106" optional="false" mask="false" fixedValue="false">
 				<from>input/query/connectionId[0]</from>
 				<to>connection</to>

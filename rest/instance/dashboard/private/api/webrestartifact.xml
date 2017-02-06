@@ -3,7 +3,7 @@
     <method>GET</method>
     <path>/dashboard</path>
     <queryParameters>connectionId</queryParameters>
-    <role>$user</role>
+    <role>manager</role>
     <permissionAction>workflow.instance.dashboard</permissionAction>
     <output>nabu.management.workflow.types.instance.dashboardOutput</output>
     <configurationType>nabu.management.workflow.configuration</configurationType>

@@ -3,7 +3,7 @@
     <method>PUT</method>
     <path>/{definitionId}/instance/{workflowId}/{transition}</path>
     <queryParameters>asynchronous</queryParameters>
-    <role>$user</role>
+    <role>manager</role>
     <permissionAction>="workflow.instance.run." + input/path/definitionId + "." + input/path/transition</permissionAction>
     <configurationType>nabu.management.workflow.configuration</configurationType>
 </restInterface>
