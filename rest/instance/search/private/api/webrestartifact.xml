@@ -2,7 +2,7 @@
 <restInterface>
     <method>GET</method>
     <path>/search</path>
-    <queryParameters>connectionId, definitionId, from, until, stateId, transitionState, offset, limit, environment, parentId, contextId, correlationId, groupId, workflowType, batchId, property, workflowId</queryParameters>
+    <queryParameters>connectionId, definitionId, from, until, stateId, transitionState, offset, limit, environment, parentId, contextId, correlationId, groupId, workflowType, batchId, property, workflowId, running</queryParameters>
     <role>manager</role>
     <permissionAction>workflow.instance.search</permissionAction>
     <output>nabu.management.workflow.types.instance.workflowList</output>

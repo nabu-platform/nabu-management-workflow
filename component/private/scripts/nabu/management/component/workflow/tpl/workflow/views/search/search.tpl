@@ -23,6 +23,7 @@
 			<input type="text" v-model="search.workflowId" placeholder="Workflow Id" class="id workflowId"/>
 		</div>
 		<div class="secondary">
+			<span>Running: </span><input type="checkbox" v-model="search.running"/>
 			<input type="text" v-model="search.correlationId" placeholder="Correlation Id" class="id correlationId"/>
 			<input type="text" v-model="search.groupId" placeholder="Group Id" class="id groupId"/>
 			<input type="text" v-model="search.contextId" placeholder="Context Id" class="id contextId"/>

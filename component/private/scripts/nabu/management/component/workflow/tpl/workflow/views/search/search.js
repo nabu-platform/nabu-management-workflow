@@ -22,7 +22,8 @@ application.views.WorkflowSearch = Vue.extend({
 				from: new Date(new Date().getTime() - (1000*60*60*24*7)),
 				until: null,
 				parentId: null,
-				workflowId: null
+				workflowId: null,
+				running: false
 			}
 		};
 	},
@@ -152,6 +153,9 @@ application.views.WorkflowSearch = Vue.extend({
 				if (this.search.environment) {
 					query += "&environment=" + this.search.environment.trim();
 				}
+				if (this.search.running) {
+					query += "&running=true";
+				}
 				for (var i = 0; i < this.search.parameters.length; i++) {
 					query += "&property=" + this.search.parameters[i].key + "=" + this.search.parameters[i].value;
 				}
@@ -276,6 +280,9 @@ application.views.WorkflowSearch = Vue.extend({
 			this.get();
 		},
 		'search.from': function() {
+			this.get();
+		},
+		'search.running': function() {
 			this.get();
 		}
 	}
