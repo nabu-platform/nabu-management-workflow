@@ -3,7 +3,7 @@
 	vertical-align: top;
 	
 	.workflow-dashboard-chart {
-		height: 350px;
+		height: 300px;
 		padding: 20px;
 	}
 	
@@ -24,8 +24,8 @@
 	}
 	
 	.ct-series-c .ct-slice-pie {
-		fill: ${levels/info/dark};
-		stroke: ${levels/info/light};
+		fill: ${levels/success/dark};
+		stroke: ${levels/success/light};
 		stroke-width: 3px;
 	}
 	
@@ -58,10 +58,14 @@
 			background-color: ${levels/trace/dark};
 		}
 		&.success {
-			background-color: ${levels/info/dark};
+			background-color: ${levels/success/dark};
 		}
 		&.running {
 			background-color: ${levels/warning/dark};
 		}
 	}
+}
+
+.dashboard.workflowDashboard {
+	width: 22rem;
 }

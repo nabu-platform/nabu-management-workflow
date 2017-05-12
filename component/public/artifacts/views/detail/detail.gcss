@@ -1,4 +1,4 @@
-[route=workflowDetail] {
+.workflowDetail {
 	.details {
 		ul {
 			li {

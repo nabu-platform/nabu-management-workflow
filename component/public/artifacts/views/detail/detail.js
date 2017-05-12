@@ -26,13 +26,8 @@ application.views.WorkflowDetail = Vue.extend({
 					}
 				}
 			});
-		}
-	},
-	filters: {
-		formatDate: function(value) {
-			return value ? new Date(value).toLocaleString() : null;
 		},
-		transitionName: function(value) {
+		formatTransitionName: function(value) {
 			for (var i = 0; i < this.content.definition.states.length; i++) {
 				for (var j = 0; j < this.content.definition.states[i].transitions.length; j++) {
 					if (this.content.definition.states[i].transitions[j].id == value) {

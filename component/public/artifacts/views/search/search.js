@@ -19,12 +19,14 @@ application.views.WorkflowSearch = Vue.extend({
 				parameters: [],
 				transitionState: null,
 				stateId: null,
-				from: new Date(new Date().getTime() - (1000*60*60*24*7)),
-				until: null,
+				from: new Date(new Date().getTime() - (1000*60*60*24*7)).toISOString().replace(/\..*/, ""),
+				until: new Date(new Date().getTime() + (1000*60*60*24*7)).toISOString().replace(/\..*/, ""),
 				parentId: null,
 				workflowId: null,
 				running: false
-			}
+			},
+			showFilter: false,
+			showId: false
 		};
 	},
 	activate: function(done) {
@@ -108,7 +110,6 @@ application.views.WorkflowSearch = Vue.extend({
 			this.get(true);
 		},
 		get: function(nextPage) {
-			console.log("requesting!!");
 			if (!nextPage) {
 				this.search.offset = 0;
 			}
@@ -139,10 +140,10 @@ application.views.WorkflowSearch = Vue.extend({
 					query += "&stateId=" + this.search.stateId;
 				}
 				if (this.search.from) {
-					query += "&from=" + this.search.from.toISOString();
+					query += "&from=" + this.search.from;
 				}
 				if (this.search.until) {
-					query += "&until=" + this.search.until.toISOString();
+					query += "&until=" + this.search.until;
 				}
 				if (this.search.parentId) {
 					query += "&parentId=" + this.search.parentId;
@@ -177,6 +178,16 @@ application.views.WorkflowSearch = Vue.extend({
 					}
 				});
 			}
+		},
+		formatState: function(value) {
+			for (var i = 0; i < this.definitions.length; i++) {
+				for (var j = 0; j < this.definitions[i].states.length; j++) {
+					if (this.definitions[i].states[j].id == value) {
+						return this.definitions[i].states[j].name;
+					}
+				}
+			}
+			return null;
 		}
 	},
 	computed: {
@@ -210,39 +221,6 @@ application.views.WorkflowSearch = Vue.extend({
 			return states;
 		}
 	}, 
-	filters: {
-		date: {
-			read: function(value) {
-				if (typeof(value) == "string") {
-					return value;
-				}
-				return value ? value.toISOString().replace(/\..*/, "") : null; // .replace(/T.*/, "")
-			},
-			write: function(value, oldValue) {
-				if (!value) {
-					return null;
-				}
-				var date = value ? new Date(value + ".000Z") : new Date(oldValue);
-				if (isNaN(date.getTime())) {
-					date = new Date(oldValue);
-				}
-				return date;
-			}
-		},
-		formatDate: function(value) {
-			return value ? new Date(value).toLocaleString() : null;
-		},
-		state: function(value) {
-			for (var i = 0; i < this.definitions.length; i++) {
-				for (var j = 0; j < this.definitions[i].states.length; j++) {
-					if (this.definitions[i].states[j].id == value) {
-						return this.definitions[i].states[j].name;
-					}
-				}
-			}
-			return null;
-		}
-	},
 	watch: {
 		'search.connectionId': function() {
 			this.search.definitionId = null;
