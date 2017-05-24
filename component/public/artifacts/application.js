@@ -26,15 +26,25 @@ application.configuration.modules.push(function($services) {
 		}
 		// predictable order
 		connections.sort();
+		
+		var createDashboard = function(connectionId, counter) {
+			$services.swagger.execute("nabu.management.workflow.rest.instance.dashboard", { connectionId : connectionId }).then(function(result) {
+				$services.manager.dashboard({
+					alias: "workflowDashboard",
+					parameters: {
+						results: result.entries,
+						connectionId: connectionId
+					},
+					id: connectionId,
+					index: index,
+					counter: counter
+				})
+			});
+		};
+		
+		var counter = 0;
 		for (var i = 0; i < connections.length; i++) {
-			$services.manager.dashboard({
-				alias: "workflowDashboard",
-				parameters: {
-					connectionId: connections[i]
-				},
-				id: connections[i],
-				index: index
-			})
+			createDashboard(connections[i], counter++);
 		}
 	});
 	

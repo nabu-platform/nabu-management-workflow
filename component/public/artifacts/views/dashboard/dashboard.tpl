@@ -2,7 +2,7 @@
 	<div class="workflowDashboard">
 		<h1>Workflows</h1>
 		<p>{{ connectionId }}</p>
-		<div class="workflow-dashboard-chart" :class="className"></div>
+		<div class="workflow-dashboard-chart" :class="className" ref="chart"></div>
 		<ul>
 			<li><span class="legend errors"></span><span class="value">{{ errors }}</span><span class="key"> Errors</span></li>
 			<li><span class="legend running"></span><span class="value">{{ running }}</span><span class="key"> Running</span></li>

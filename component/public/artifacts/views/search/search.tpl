@@ -4,8 +4,8 @@
 			<h1 class="title">Search Workflows</h1>
 			
 			<div class="actions">
-				<button class="neutral" @click="showFilter = !showFilter"><span class="n-icon n-icon-filter"></span><span>Filter</span></button>
-			
+				<button :disabled="working" class="neutral" @click="showFilter = !showFilter"><span class="n-icon n-icon-filter"></span><span>Filter</span></button>
+				<button :disabled="working" @click="get(false)"><span class="n-icon n-icon-search"></span></button>
 				<div class="optional" v-show="showFilter" v-auto-close="function() { showFilter = false }">
 					<div class="filter">
 						<span class="label">Connection</span>
@@ -79,8 +79,8 @@
 						<input type="text" v-model="search.environment" placeholder="Environment" class="id environment"/>
 					</div>
 					<div class="actions">
-						<button class="good" v-on:click="get(false)">Search</button>
-						<button v-on:click="clear()">Clear Filters</button>
+						<button :disabled="working" class="good" v-on:click="get(false)">Search</button>
+						<button :disabled="working" v-on:click="clear()">Clear Filters</button>
 					</div>
 				</div>
 			</div>
@@ -132,7 +132,7 @@
 				<tfoot>
 					<tr>
 						<td colspan="14">
-							<input class="limit" type="number" v-model="search.limit"/><button v-on:click="more">Load More</button>
+							<input class="limit" type="number" v-model="search.limit"/><button :disabled="working" v-on:click="more">Load More</button>
 						</td>
 					</tr>
 				</tfoot>

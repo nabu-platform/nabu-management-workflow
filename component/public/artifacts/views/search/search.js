@@ -12,7 +12,7 @@ application.views.WorkflowSearch = Vue.extend({
 				correlationId: null,
 				groupId: null,
 				workflowType: null,
-				limit: 10,
+				limit: 15,
 				offset: 0,
 				batchId: null,
 				environment: null,
@@ -26,7 +26,8 @@ application.views.WorkflowSearch = Vue.extend({
 				running: false
 			},
 			showFilter: false,
-			showId: false
+			showId: false,
+			working: false
 		};
 	},
 	activate: function(done) {
@@ -161,6 +162,7 @@ application.views.WorkflowSearch = Vue.extend({
 					query += "&property=" + this.search.parameters[i].key + "=" + this.search.parameters[i].value;
 				}
 				var self = this;
+				self.working = true;
 				nabu.utils.ajax({
 					method: "get",
 					url: "${server.root()}api/workflow/search" + query,
@@ -175,6 +177,10 @@ application.views.WorkflowSearch = Vue.extend({
 							}
 							self.search.offset += parseInt(self.search.limit);
 						}
+						self.working = false;
+					},
+					error: function(response) {
+						self.working = false;
 					}
 				});
 			}
