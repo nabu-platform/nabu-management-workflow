@@ -4,15 +4,9 @@
 			<h1 class="title">Search Workflows</h1>
 			
 			<div class="actions">
-				<button :disabled="working" class="neutral" @click="showFilter = !showFilter"><span class="n-icon n-icon-filter"></span><span>Filter</span></button>
+				<button :disabled="working" class="info" @click="showFilter = !showFilter"><span class="n-icon n-icon-filter"></span><span>Filter</span></button>
 				<button :disabled="working" @click="get(false)"><span class="n-icon n-icon-search"></span></button>
 				<div class="optional" v-show="showFilter" v-auto-close="function() { showFilter = false }">
-					<div class="filter">
-						<span class="label">Connection</span>
-						<select v-model="search.connectionId" class="connectionId">
-							<option v-for="connectionId in connections" v-bind:value="connectionId">{{ connectionId }}</option>
-						</select>
-					</div>
 					<div class="filter">
 						<span class="label">Definition</span>
 						<select v-model="search.definitionId" class="definitionId">

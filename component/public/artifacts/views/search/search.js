@@ -6,7 +6,6 @@ application.views.WorkflowSearch = Vue.extend({
 			definitions: [],
 			transitionStates: ["RUNNING", "WAITING", "STOPPED", "ERROR", "FAILED", "REVERTED", "SUCCEEDED"],
 			search: {
-				connectionId: null,
 				definitionId: null,
 				contextId: null,
 				correlationId: null,
@@ -120,7 +119,7 @@ application.views.WorkflowSearch = Vue.extend({
 					query += "&definitionId=" + this.search.definitionId;
 				}
 				else if (this.search.connectionId) {
-					query += "&connectionId=" + this.search.connectionId;
+					query += "&connectionId=" + this.connection;
 				}
 				if (this.search.contextId) {
 					query += "&contextId=" + this.search.contextId;
@@ -225,10 +224,13 @@ application.views.WorkflowSearch = Vue.extend({
 				}
 			}
 			return states;
+		},
+		connection: function() {
+			return this.$services.manager.connection();
 		}
 	}, 
 	watch: {
-		'search.connectionId': function() {
+		'connection': function() {
 			this.search.definitionId = null;
 			this.get();
 		},
