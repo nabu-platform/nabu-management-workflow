@@ -81,7 +81,7 @@
 			
 		</div>
 		<div class="search-results">
-			<table cellspacing="0" cellpadding="0">
+			<table class="classic" cellspacing="0" cellpadding="0">
 				<thead>
 					<tr>
 						<td v-if="showId">Id</td>

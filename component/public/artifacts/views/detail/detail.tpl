@@ -4,7 +4,7 @@
 		<div class="details">
 			<ul>
 				<li v-if="!embedded"><span class="key">Definition Id: </span><span class="value">{{ content.workflow.definitionId }}</span></li>
-				<li v-if="!embedded"><span class="key">Workflow Id: </span><span class="value"><a v-route:workflowDetail="{ definitionId: content.workflow.definitionId, workflowId: content.workflow.id }">{{ content.workflow.id }}</a></span></li>
+				<li><span class="key">Workflow Id: </span><span class="value"><a v-route:workflowDetail="{ definitionId: content.workflow.definitionId, workflowId: content.workflow.id }">{{ content.workflow.id }}</a></span></li>
 				<li v-if="!embedded"><span class="key">State: </span><span v-bind:class="{ 'bad': content.workflow.transitionState == 'ERROR', 'good': content.workflow.transitionState == 'SUCCEEDED' }" class="value">{{ content.workflow.transitionState }}</span></li>
 				<li v-if="!embedded"><span class="key">Started: </span><span class="value">{{ formatDateTime(content.workflow.started) }}</span></li>
 				<li v-if="!embedded"><span class="key">Stopped: </span><span class="value">{{ formatDateTime(content.workflow.stopped) }}</span></li>
@@ -19,7 +19,7 @@
 				<li v-for="property in content.properties"><span class="key">{{ property.key }}: </span><span class="value">{{ property.value }}</span></li>
 			</ul>
 		</div>
-		<table cellspacing="0" cellpadding="0">
+		<table class="classic" cellspacing="0" cellpadding="0">
 			<thead>
 				<tr>
 					<td>Name</td>
