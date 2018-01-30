@@ -9,4 +9,8 @@
     <inputAsStream>true</inputAsStream>
     <output>nabu.management.workflow.types.instance.createOutput</output>
     <configurationType>nabu.management.workflow.configuration</configurationType>
+    <lenient>false</lenient>
+    <webApplicationId>false</webApplicationId>
+    <language>false</language>
+    <allowFormBinding>false</allowFormBinding>
 </restInterface>

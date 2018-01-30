@@ -1,0 +1,4 @@
+<structure name="header">
+    <field maxOccurs="unbounded" minOccurs="0" name="contentType" type="java.lang.String"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="contentDisposition" type="java.lang.String"/>
+</structure>
