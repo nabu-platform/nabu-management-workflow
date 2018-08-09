@@ -7,4 +7,10 @@
     <permissionAction>workflow.instance.search</permissionAction>
     <output>nabu.management.workflow.types.instance.workflowList</output>
     <configurationType>nabu.management.workflow.configuration</configurationType>
+    <lenient>false</lenient>
+    <webApplicationId>false</webApplicationId>
+    <language>false</language>
+    <allowFormBinding>false</allowFormBinding>
+    <caseInsensitive>false</caseInsensitive>
+    <cache>false</cache>
 </restInterface>

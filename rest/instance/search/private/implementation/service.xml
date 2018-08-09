@@ -1,7 +1,7 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" disabled="false" id="c7fe6970-b72c-4ad7-99a1-8ac79fe69c03">
 	<steps xsi:type="be.nabu.libs.services.vm.step.For" disabled="false" id="e404f244-8bed-4c28-8833-c4f473d25d6f" variable="property">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="72976b84-edde-4842-8c95-248cb76d01d3">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="9a2e1402-8bb0-4acc-889b-3bdde233fbf9" invocationOrder="0" temporaryMapping="true" serviceId="nabu.utils.String.split" resultName="result13ead88634234613971a69af165d6f98" y="91" x="73">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="9a2e1402-8bb0-4acc-889b-3bdde233fbf9" serviceId="nabu.utils.String.split" resultName="result13ead88634234613971a69af165d6f98" invocationOrder="0" temporaryMapping="true" y="91" x="73">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="a7856f31-8d87-4db2-9e14-50b51d0a16c7" fixedValue="false" optional="false" mask="false">
 					<from>property</from>
 					<to>string</to>
@@ -22,7 +22,7 @@
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="4ef083a2-a8c3-4452-b122-93e8af2da687">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="1fcb9c7a-3b10-4d2a-beb1-f66dd8f6710e" invocationOrder="0" temporaryMapping="true" serviceId="nabu.utils.List.add" resultName="resultc51db1478a014acfa6a920ff2ee04265" y="85" x="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="1fcb9c7a-3b10-4d2a-beb1-f66dd8f6710e" serviceId="nabu.utils.List.add" resultName="resultc51db1478a014acfa6a920ff2ee04265" invocationOrder="0" temporaryMapping="true" y="85" x="5">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="a2b2f93e-89d6-4be1-ac09-be32119f9072" fixedValue="false" optional="false" mask="false">
 					<from>properties</from>
 					<to>list</to>
@@ -47,7 +47,7 @@
 			<steps xsi:type="be.nabu.libs.services.vm.step.Throw" disabled="false" label="input/configuration/workflowFilter != null &amp;&amp; input/query/connectionId[0] !~ input/configuration/workflowFilter" id="fa6ea86e-abc4-4ab7-8c2a-64a3b2769ef4" message="Invalid connection" xsi:nil="true"/>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Switch" disabled="false" id="6a83b9f2-b062-4fc1-8e3f-5427125f9153">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/query/workflowId != null" id="3d3a6f18-aa17-4fe1-84c0-c6c45cec943c">
-					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="d71622d0-7ca3-4a28-bc25-1bba39bb1b8e" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.providers.basic.services.getWorkflow" resultName="result5e1017fe3c4d4c81bc392c4f2a8801be" y="91" x="95">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="d71622d0-7ca3-4a28-bc25-1bba39bb1b8e" serviceId="nabu.misc.workflow.providers.basic.services.getWorkflow" resultName="result5e1017fe3c4d4c81bc392c4f2a8801be" invocationOrder="0" temporaryMapping="true" y="91" x="95">
 						<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="15529d09-2523-428e-b28b-8018196014b1" fixedValue="false" optional="false" mask="false">
 							<from>input/query/connectionId[0]</from>
 							<to>connectionId</to>
@@ -64,7 +64,7 @@
 					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="e0322839-4ee5-47c9-b268-163e4dc2c141">
-					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="7c91f7ff-08ea-46cc-8b58-7807249008dd" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.providers.basic.services.getWorkflows" resultName="result600d73b7825f4c39af4ac707b73a51fb" y="64" x="64">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="7c91f7ff-08ea-46cc-8b58-7807249008dd" serviceId="nabu.misc.workflow.providers.basic.services.getWorkflows" resultName="result600d73b7825f4c39af4ac707b73a51fb" invocationOrder="0" temporaryMapping="true" y="64" x="64">
 						<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="5d441cd9-3ec6-4cbd-a5ae-8ed2c26c0029" fixedValue="false" optional="false" mask="false">
 							<from>input/query/connectionId[0]</from>
 							<to>connectionId</to>
@@ -133,6 +133,10 @@
 							<from>input/query/running[0]</from>
 							<to>running</to>
 						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="0cff78f4-48fa-4722-8cdc-2f8cd524d51d" fixedValue="true" optional="false" mask="false">
+							<from>started desc</from>
+							<to>orderBy[0]</to>
+						</steps>
 						<asynchronous>false</asynchronous>
 					</steps>
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="8e87eeaa-7961-4142-8e61-c07691dcb5a2" fixedValue="false" optional="false" mask="false">
@@ -143,8 +147,8 @@
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Switch" disabled="false" id="ca0ff14d-2596-4021-aa05-1c2a95c8b5b8">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/query/workflowId != null" id="3d3a6f18-aa17-4fe1-84c0-c6c45cec943c">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="363fcb75-cfa6-4d86-8cb7-74fe5eacef7c" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.Services.getWorkflow" resultName="result1b1eb86ec9ba470c930815331897afc4" y="94" x="52">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="input/query/workflowId != null" id="ce6650f188234ee29609b11c33ee634a">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="363fcb75-cfa6-4d86-8cb7-74fe5eacef7c" serviceId="nabu.misc.workflow.Services.getWorkflow" resultName="result1b1eb86ec9ba470c930815331897afc4" invocationOrder="0" temporaryMapping="true" y="94" x="52">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="4232629f-1c0f-4219-9940-ce0a3c3d3645" fixedValue="false" optional="false" mask="false">
 						<from>input/query/definitionId[0]</from>
 						<to>definitionId</to>
@@ -160,9 +164,9 @@
 					<to>output/content/workflows[0]</to>
 				</steps>
 			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Throw" disabled="false" label="input/configuration/workflowFilter != null &amp;&amp; input/query/definitionId[0] !~ input/configuration/workflowFilter" id="fa6ea86e-abc4-4ab7-8c2a-64a3b2769ef4" message="Invalid definitionId" xsi:nil="true"/>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Throw" disabled="false" label="input/configuration/workflowFilter != null &amp;&amp; input/query/definitionId[0] !~ input/configuration/workflowFilter" id="e975c10b7ada4d26b9320fe4ea38ca95" message="Invalid definitionId" xsi:nil="true"/>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="3084169d-8c60-4617-8d16-12b65a2cf31b">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="86fb91ca-6547-4f8f-a20c-024763437d24" invocationOrder="0" temporaryMapping="true" serviceId="nabu.misc.workflow.Services.getWorkflows" resultName="resultbabcb0a5daf646c88298ccf1151ca438" y="79" x="41">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="86fb91ca-6547-4f8f-a20c-024763437d24" serviceId="nabu.misc.workflow.Services.getWorkflows" resultName="resultbabcb0a5daf646c88298ccf1151ca438" invocationOrder="0" temporaryMapping="true" y="79" x="41">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="97ef655b-fc3c-4748-99cf-83cc4e2666fb" fixedValue="false" optional="false" mask="false">
 						<from>input/query/stateId[0]</from>
 						<to>stateId</to>
